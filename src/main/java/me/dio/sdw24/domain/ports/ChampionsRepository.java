@@ -9,5 +9,5 @@ public interface ChampionsRepository {
 
     List<Champions> findAll();
 
-    Optional<Champions> findOne(long id);
+    Optional<Champions> findById(long id);
 }

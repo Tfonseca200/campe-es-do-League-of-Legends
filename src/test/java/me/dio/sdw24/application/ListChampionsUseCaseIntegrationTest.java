@@ -13,7 +13,7 @@ import java.util.List;
 public class ListChampionsUseCaseIntegrationTest {
 
     @Autowired
-    private ListChampionsUserCase listChampionsUserCase;
+    private ListChampionsUseCase listChampionsUserCase;
 
     @Test
     public void testListChampions() {

@@ -14,28 +14,28 @@ public class ChampionsJdbcRepository implements ChampionsRepository {
 
 
     private final JdbcTemplate jdbcTemplate;
-    private final RowMapper<Champions> rowMapper;
+    private final RowMapper<Champions> championsRowMapper;
 
     public ChampionsJdbcRepository( JdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
-        this.rowMapper =  ((rs, rowNum) -> new Champions(
+        this.championsRowMapper = ((rs, rowNum) -> new Champions(
 
                 rs.getLong("id"),
                 rs.getString("name"),
                 rs.getString("role"),
                 rs.getString("lore"),
-                rs.getString("imageUrl")
+                rs.getString("image_Url")
         ));
     }
     @Override
     public List<Champions> findAll() {
-        return jdbcTemplate.query("SELECT * FROM CHAMPIONS", rowMapper);
+        return jdbcTemplate.query("SELECT * FROM CHAMPIONS", championsRowMapper);
     }
 
     @Override
-    public Optional<Champions> findOne(long id) {
-        String sql = ("SELECT * FROM CHAMPIONS WHERE ID = ?");
-        jdbcTemplate.query(sql,rowMapper, id);
-        return Optional.empty();
+    public Optional<Champions> findById(long id) {
+        String sql = "SELECT * FROM CHAMPIONS WHERE ID = ?";
+        List<Champions> champions = jdbcTemplate.query(sql,championsRowMapper, id);
+        return champions.stream().findFirst();
     }
 }
