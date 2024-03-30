@@ -4,7 +4,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 import me.dio.sdw24.application.AskChampionUseCase;
 
-import java.util.List;
 
 @Tag(name = "Campeões", description = "Endpoints do dominio de campeões do LOL")
 @RestController
