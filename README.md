@@ -8,7 +8,7 @@ API Rest web de campeãos do Legue of Legends utilizando Java , Spring boot e Ap
 
 A ideia do projeto é poder escolher um campeão e fazer alguma pergunta, a resposta é gerada por inteligência artificial baseado na personalidade do campeão escolhido.
 
-O foco do front foi o consumo da Api Rest fonercido pelo back-end, não abordando o HTML e CSS.
+O foco do front foi o consumo da Api Rest fornecido pelo back-end, não abordando o HTML e CSS.
 
 # Tecnologias utilizadas
 
